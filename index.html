@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Leaflet Routing Machine Example</title>
+    <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+    <!-- font-gg---------------------------------------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    
+    
+    <style>
+        .map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!-- btn csss --------------------------->
+    <link rel="stylesheet" href="/css/btn.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="map" class="map"></div>
+    
+    <!-- input ---------------------------------------------------->
+    <div class="box-all-form">
+        <div class="box-route-icon" id="box-route-icon" onclick="act()">
+            <img src="image/route_black_24dp.svg" alt="" class="route-icon" id="route-icon">
+        </div>
+        <div id="box-inputall">
+            <div class="box-input1">
+                <input type="text" id="location-st" placeholder="latitude and longitude">
+                <span>start</span>        
+            </div>
+            <div class="box-input2">
+                <input type="text" id="location-des" placeholder="latitude and longitude">
+                <span>destination</span>
+            </div>
+            <button onclick="excute()" id="submit">submit</button>
+            <button onclick="excuteStart()" id="start">Start</button>
+        </div>
+    </div>
+
+    <!-- garbage------------------------------->
+    <!-- btn  -->
+    <div class="box-outside-container">
+        <div class="box-img-garbage">
+            <img src="image/icon-garbage.png" alt="" class="img-garbage-icon" id="img-garbage-icon" onclick="activeGarbage()">
+        </div>
+        <div id="box-btn-add-garbage">
+            <div class="box-btn-value-input">
+                <input type="text" id="location-garbage-text" placeholder="latitude and longitude">
+            </div>
+            <button onclick="excuteAddValueGarbage()" id="btn-getValue" class="btn-getValueAdd">add</button>
+            <button onclick="excuteStartMoving()" id="btn-getValue"class= "btn-getValueStart">Start</button>
+        </div>
+    </div>
+    
+      <!-- end btn -->
+    <div class="box-img-garbage">
+        <img src="image/icon-garbage.png" alt="" class="icon-demo" id="icon-demo" onclick="getValueActive()">
+    </div>
+    <!-- jquery ---------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- libs leaflet -->
+    <!-- <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+    <!-- script -->
+    <script src="/js/MovingMarker.js"></script>
+    
+    <!-- <script src="/js/getValue.js"></script> -->
+    <script src="/js/script.js"></script>
+    <script src="/js/leaflet-scripts.js"></script> 
+</body>
+</html>

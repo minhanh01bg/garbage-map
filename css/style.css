@@ -1,0 +1,108 @@
+body,html{
+    height:100%;
+}
+.box-all-form{
+    position: relative;
+    width:37%;
+}
+/* icon-route--------------------------------------------------- */
+.box-route-icon{
+    position: absolute;
+    width:30px;
+}
+
+.route-icon{
+    position: absolute;
+    z-index:1000;
+    left:12px;
+    top:0;
+    width:100%;
+    background-color:white;
+    top:100px;
+}
+.route-icon:active{
+    border:2px solid black;
+    border-radius: 3px;
+}
+
+/* form-input------------------------------------------------------- */
+#box-inputall{
+    position: relative;
+    left: 100px;
+    /* top: 0; */
+    z-index: 1000;
+    width: 600px;
+    background-color:rgba(255, 255, 255, 0.479);
+    border-radius: 3px;
+    height: 150px;
+    box-sizing: border-box;
+    visibility: hidden;
+    bottom:200px;
+}
+#box-inputall.active{
+    visibility: visible;
+    bottom:0;
+    transition: 0.5s ease-in-out;
+}
+#box-inputall:active{
+    border:2px solid black;
+}
+.box-input1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:50px;
+}
+.box-input2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:120px;
+}
+input{
+    position: absolute;
+    width:90%;
+    text-align: center;
+    font-size:1.1rem;
+    font-weight: 500;
+    border:none;
+    margin-top:20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+span{
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: 700;
+    bottom:120%;
+    left:10px;
+}
+
+#submit{
+    position: absolute;
+    right:0;
+    border:none;
+    background-color: black;
+    color:white;
+    top:5px;
+}
+#submit:active{
+    background-color: white;
+    color:black;
+}
+#start{
+    position: absolute;
+    right:100px;
+    border:none;
+    background-color: black;
+    color:white;
+    top:5px;
+}
+#start:active{
+    background-color: white;
+    color:black;
+}
+
