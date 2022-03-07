@@ -1,0 +1,117 @@
+body,html{
+    margin:0;
+    padding:0;
+    font-family: 'Hubballi', cursive;
+}
+.box-parent{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color:rgba(240,242,245);
+}
+.box-logo{
+    position: absolute;
+    top:200px;
+    left:450px;
+    width:350px;
+    height:200px;
+}
+
+.box-logo img{
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.box-introduce{
+    position: absolute;
+    top:300px;
+    left:450px;
+}
+.box-introduce span{
+    font-size: 1.1rem;
+    font-weight:700;
+}
+
+.box-input-infomation{
+    border: 1px solid rgba(185, 183, 183, 0.274);
+    background-color:#ffffff;
+    position: absolute;
+    top:150px;
+    right:450px;
+    display: flex;
+    flex-direction: column;
+    width:420px;
+    height:390px;
+    /* justify-content: ; */
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 10%),0px 8px 16px rgb(0 0 0 / 10%);
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.box-input-infomation .form-group input{
+    border:none;
+    border-radius: 7px;
+    border:1px solid rgba(200, 199, 199, 0.787);
+    margin-top:15px;
+    width:370px;
+    height:55px;
+    font-size: 20px;
+    padding:10px;
+    padding-left:20px;
+    box-sizing: border-box;
+    outline: none;
+}
+.box-input-infomation .form-group input.active{
+    border: 1px solid #1877f2;
+}
+.box-input-infomation .form-group span{
+    margin-left:10px;
+}
+.login{
+    margin-top:20px;
+    border:none;
+    background-color: #1877f2;
+    color:white;
+    width:360px;
+    height:50px;
+    font-size: 23px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.box-input-infomation a{
+    margin-top:10px;
+    font-size: 18px;
+    color:#949494;
+    font-weight: 600;
+    text-decoration: none;
+}
+.box-input-infomation a:hover{
+    text-decoration: underline;
+}
+
+.line{
+    margin-top:15px;
+    width:370px;
+    height:1px;
+    background-color: rgba(197, 197, 197, 0.575);
+}
+.Sign-up{
+    margin-top:15px;
+    border:none;
+    background-color: #42b72a;
+    color:white;
+    width:230px;
+    height:48px;
+    font-size: 18px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.Sign-up:hover{
+    background-color: #2e9919;
+}

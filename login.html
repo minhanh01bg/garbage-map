@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Đăng nhập hoặc đăng ký</title>
+    <!-- css  --------------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-for-login.css">
+</head>
+<!-- rgb(240,242,245) -->
+<body>
+    <div class="box-parent">
+        <div class="box-logo">
+            <img src="image/logo-ua.png" alt="">
+        </div>
+        <div class="box-introduce">
+            <span>Hãy đổ rác đúng nơi qui định.</span>
+        </div>
+        <form action="" method="POST" id="form-full">
+            <div class="box-input-infomation">
+                <div class="form-group">
+                    <input type="text" placeholder="Username" id="username">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" id = "password">
+                    <span class="form-message"></span>
+                </div>
+                <button class="login" id="login" onclick="clickAdmin()">Đăng nhập</button>
+                <a href="#">Quên mật khẩu?</a>
+                <div class="line"></div>
+                <button class="Sign-up" id="Sign-up">Tạo tài khoản mới</button>
+            </div>
+        </form>
+    </div>
+    <!-- script---------------- -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/get_data_login.js"></script>
+    <script src="js/validator.js"></script>
+    <script>
+        Validator({
+            form: "#form-full",
+            errorSelector:".form-message",
+            rules: [
+                Validator.isUsernameRequired('#username'),
+                Validator.isPasswordRequired('#password')
+            ]
+        });
+    </script>
+</body>
+</html>
