@@ -1,0 +1,301 @@
+@import url("https://f...content-available-to-author-only...s.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+:root {
+    --primary-color: #297bff;
+    --grey: #f5f5f5;
+    --green: #12a54f;
+    --border: 2px solid var(--green);
+    --box-shadow: 0px 2px 4px rgb(0 0 0 / 10%), 0px 8px 16px rgb(0 0 0 / 10%);
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.align-row-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.align-row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side-bar {
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--green);
+    overflow: hidden;
+}
+.side-bar__heading {
+    height: 15%;
+    /* background-color: aqua; */
+    font-weight: 700;
+    font-size: 25px;
+    padding: 15px 0;
+    margin-bottom: 35px;
+    user-select: none;
+    color: #fff;
+}
+.side-bar__content {
+    position: relative;
+    color: #fff;
+}
+.side-bar__heading--icon {
+    text-align: center;
+}
+.side-bar__heading--icon span {
+    font-size: 70px;
+    width: 90px;
+}
+.side-bar__heading--name {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+.side-bar__item--link {
+    padding: 10px 0 10px 20px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 50px 0 0 50px;
+    margin-left: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.side-bar__item--link__icon span {
+    margin-right: 20px;
+    font-size: 35px;
+}
+
+.active {
+    background-color: white;
+    color: var(--green);
+}
+.active.side-bar__item--link::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white;
+    pointer-events: none;
+}
+.active.side-bar__item--link::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+}
+
+.content {
+    flex: 1;
+    min-height: 100vh;
+}
+.header {
+    min-height: 60px;
+    max-height: 60px;
+    background-color: var(--green);
+}
+.side-bar__min--icon span {
+    padding: 10px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+.search-box {
+    flex: 1;
+}
+
+.search-box .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+    border-radius: 50px;
+    border: var(--border);
+    border-color: #fff;
+}
+.search-box .search input {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    background: none;
+    min-width: 300px;
+}
+
+.search-box .search label {
+    border-left: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.search-box .search label span {
+    padding: 5px;
+    font-size: 20px;
+    color: var(--green);
+}
+
+.user {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 20px;
+    background-image: url("https://i...content-available-to-author-only...a.net/media/cc0-images/grapefruit-slice-332-332.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+}
+.user-info {
+    position: absolute;
+    top: 115%;
+    right: 10%;
+    background-color: white;
+    width: 150px;
+    padding: 10px 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 2px;
+    display: none;
+}
+.user-info__img img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.user-info__name {
+    height: 30px;
+    margin-top: 10px;
+    padding: 10px 0;
+    font-size: 22px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    text-align: center;
+    border-bottom: 2px solid #a8a3a3;
+}
+.user-info__desc--item {
+    margin-top: 10px;
+}
+.user-info__desc--item:last-child {
+    color: var(--green);
+}
+.user-info::before {
+    content: "";
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background-color: transparent;
+}
+.user:hover .user-info {
+    display: block;
+}
+
+.statistic {
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 90%;
+}
+.statistic__item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+}
+.statistic__item--icon span {
+    font-size: 60px;
+    margin-left: 50px;
+    color: var(--green);
+}
+.statistic__item--desc {
+    flex: 1;
+}
+.statistic__item--desc__heading {
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--green);
+}
+.statistic__item--desc__body {
+    color: #a09696;
+}
+
+#button-edit {
+    outline: none;
+    border: none;
+    height: 25px;
+    width: 60px;
+    margin-top: 5px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 5px;
+    border-radius: 5px;
+    background: #12a54f;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#button-edit::before {
+    content: "\00bb";
+    position: absolute;
+    top: -1;
+    left: -10px;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+#button-edit:hover {
+    background: #12a54f;
+    color: #fff;
+    border-radius: 15px;
+}
+
+#button-edit:hover::before {
+    left: 5px;
+    opacity: 1;
+}
+.map {
+	width: 100%;
+	height: 500px;
+	/* background-color: red; */
+}

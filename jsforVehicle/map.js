@@ -251,7 +251,7 @@ function getValueActive() {
         }
     });
 }
-
+// display truck list
 
 window.addEventListener('load', function () {
     $.ajax({
@@ -265,25 +265,8 @@ window.addEventListener('load', function () {
                 }
                 var Lat = records[i].split(["\t"])[0];
                 var Long = records[i].split(["\t"])[1];
-                L.marker([Lat, Long], { icon:icon_truck}).addTo(map);
-            }
-        }
-    })
-})
-
-window.addEventListener('load', function () {
-    $.ajax({
-        url: 'phpforVehicle/displayTBonDB.php',
-        success: function (response) {
-            var records = response.split(["\n"]);
-            for (var i = 0; i < records.length; i++) {
-                if (records[i] === "") {
-                    break;
-                }
-                var Lat = records[i].split(["\t"])[0];
-                var Long = records[i].split(["\t"])[1];
                 // console.log(Lat, Long);
-                L.marker([Lat, Long], { icon:icon_garbage_green}).addTo(map);
+                L.marker([Lat, Long], { icon:icon_truck}).addTo(map);
             }
         }
     })

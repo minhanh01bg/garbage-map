@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- css leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+		<link rel="stylesheet" href="node_modules/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+		<!-- Google icons -->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+			rel="stylesheet"
+		/>
+		<!-- My CSS -->
+		<link rel="stylesheet" href="css/dashBoard.css" />
+		<link rel="stylesheet" href="css/binInfo.css" />
+		<link rel="stylesheet" href="css/truckInfo.css" />
+
+		<title>Garbage Map</title>
+	</head>
+	<body>
+		<div class="wrapper align-row-center">
+			<div class="side-bar">
+				<a href="dashBoard.html" class="side-bar__heading align-row-center">
+					<div class="side-bar__heading--icon">
+						<span class="material-icons"> map </span>
+					</div>
+					<div class="side-bar__heading--name">
+						<span>Demo Map</span>
+					</div>
+				</a>
+				<div class="side-bar__content">
+					<a href="dashBoard.html" class="side-bar__item">
+						<div class="side-bar__item--link align-row-start">
+							<div class="side-bar__item--link__icon align-row-center">
+								<span class="material-icons-outlined"> house </span>
+							</div>
+							<div class="side-bar__item--link__name">
+								<span>Dashboard</span>
+							</div>
+						</div>
+					</a>
+					<a href="truckInfo.html" class="side-bar__item">
+						<div class="side-bar__item--link align-row-start">
+							<div class="side-bar__item--link__icon align-row-center">
+								<span class="material-icons-outlined"> local_shipping </span>
+							</div>
+							<div class="side-bar__item--link__name">
+								<span>Vehicle</span>
+							</div>
+						</div>
+					</a>
+					<a href="binInfo.html" class="side-bar__item">
+						<div class="side-bar__item--link align-row-start active">
+							<div class="side-bar__item--link__icon align-row-center">
+								<span class="material-icons-outlined"> delete </span>
+							</div>
+							<div class="side-bar__item--link__name">
+								<span>Trash Bin</span>
+							</div>
+						</div>
+					</a>
+					<a href="history.html" class="side-bar__item">
+						<div class="side-bar__item--link align-row-start">
+							<div class="side-bar__item--link__icon align-row-center">
+								<span class="material-icons"> history </span>
+							</div>
+							<div class="side-bar__item--link__name">
+								<span>History</span>
+							</div>
+						</div>
+					</a>
+					<a href="help.html" class="side-bar__item">
+						<div class="side-bar__item--link align-row-start">
+							<div class="side-bar__item--link__icon align-row-center">
+								<span class="material-icons"> help_outline </span>
+							</div>
+							<div class="side-bar__item--link__name">
+								<span>Help</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			
+			<div class="content">
+				<div class="header align-row-center">
+					<div class="side-bar__min--icon">
+						<span class="material-icons"> menu </span>
+					</div>
+					<div class="search-box align-row-center">
+						<div class="search">
+							<input type="text" name="" id="search-input" placeholder="Search here..." />
+							<label for="search-input"><span class="material-icons-outlined">search</span></label>
+						</div>
+					</div>
+					<div class="user">
+						<div class="user-info">
+							<div class="user-info__img align-row-center">
+								<img
+									src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
+									alt=""
+								/>
+							</div>
+							<div class="user-info__name">gjgjhghjgj</div>
+							<div class="user-info__desc">
+								<div class="user-info__desc--item">Profile</div>
+								<div class="user-info__desc--item">Setting</div>
+								<div class="user-info__desc--item">Sign Out</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="statistic align-row-center">
+					<div class="statistic__item align-row-start">
+						<div class="statistic__item--desc">
+							<div class="statistic__item--desc__heading">12890</div>
+							<div class="statistic__item--desc__body">Truck On Work</div>
+						</div>
+						<div class="statistic__item--icon">
+							<span class="material-icons"> local_shipping </span>
+						</div>
+					</div>
+					<div class="statistic__item align-row-start">
+						<div class="statistic__item--desc">
+							<div class="statistic__item--desc__heading">12890</div>
+							<div class="statistic__item--desc__body">Truck Free</div>
+						</div>
+						<div class="statistic__item--icon">
+							<span class="material-icons-outlined"> local_shipping </span>
+						</div>
+					</div>
+					<div class="statistic__item align-row-start">
+						<div class="statistic__item--desc">
+							<div class="statistic__item--desc__heading">12890</div>
+							<div class="statistic__item--desc__body">Full Bin</div>
+						</div>
+						<div class="statistic__item--icon">
+							<span class="material-icons"> delete </span>
+						</div>
+					</div>
+					<div class="statistic__item align-row-start">
+						<div class="statistic__item--desc">
+							<div class="statistic__item--desc__heading">12890</div>
+							<div class="statistic__item--desc__body">Empty</div>
+						</div>
+						<div class="statistic__item--icon">
+							<span class="material-icons-outlined"> delete </span>
+						</div>
+					</div>
+				</div>
+				<!-- table--------------------------------- -->
+				<div class="table" id="table">
+					<div class="table__header">
+						<div class="table__header--item">
+							<span>TRASHBIN_ID</span>
+						</div>
+						<div class="table__header--item">
+							<span>CREATED</span>
+						</div>
+						<div class="table__header--item">
+							<span>OWNER</span>
+						</div>
+						<div class="table__header--item">
+							<span>NAME</span>
+						</div>
+						<div class="table__header--item">
+							<span>LATITUDE</span>
+						</div>
+						<div class="table__header--item">
+							<span>LONGITUDE</span>
+						</div>
+						<div class="table__header--item">
+							<span>STATE</span>
+						</div>
+					</div>
+				</div>
+				<!-- end table------------------------------------ -->
+				<!-- modal------------------------------------------- -->
+				<div class="edit-modal-container">
+                    <div class="edit-modal__backgound" onclick="closeEditModal()"></div>
+                    <div class="edit-modal-wrapper">
+                        <div class="edit-modal__heading">
+                            <span>Truck Edit</span>
+                            <button class="edit-modal__button edit-modal__delete" onclick="deleteRow()">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="edit-modal__body">
+                            <div class="edit-modal__body--item">
+                                <label for="">Engine ID</label>
+                                <input type="text" placeholder="Enter new engine ID" id="engineId" />
+                            </div>
+                            <div class="edit-modal__body--item">
+                                <label for="">Engine Type</label>
+                                <input type="text" placeholder="Enter new engine type" id="engineType"/>
+                            </div>
+                            <div class="edit-modal__body--item">
+                                <label for="">Registration Year</label>
+                                <!-- <input type="datetime" placeholder="Update new registration year"/> -->
+                                <input type="date" name="" id="registrationYear" />
+                            </div>
+                            <div class="edit-modal__body--item">
+                                <label for="">Starting Date</label>
+                                <input type="date" id="startingDate" />
+                            </div>
+                            <div class="edit-modal__body--item">
+                                <label for="">Address</label>
+                                <input type="text" placeholder="Enter new center address" id="address"/>
+                            </div>
+                            <div class="edit-modal__control">
+                                <button class="edit-modal__button edit-modal__back" onclick="closeEditModal()">Close</button>
+                                <button class="edit-modal__button edit-modal__save" onclick="saveDataVH()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button onclick="openEditModal()">edit</button> -->
+                <button onclick="openAddNewModal()">add</button>
+                <div class="add-modal-container">
+                    <div class="add-modal__backgound" onclick="closeAddNewModal()"></div>
+                    <div class="add-modal-wrapper">
+                        <div class="add-modal__heading">
+                            <span>Add New Truck</span>
+                            <button class="add-modal__button add-modal__delete">
+                                Delete
+                            </button>
+                        </div>
+                        <div class="add-modal__body">
+                            <div class="add-modal__body--item">
+                                <label for="">License Plate</label>
+                                <input type="text" placeholder="Enter License Plate" id="licensePlate" />
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Engine ID</label>
+                                <input type="text" placeholder="Enter engine ID" id="engineIdInput"/>
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Engine Type</label>
+                                <input type="text" placeholder="Enter engine type" id="engineTypeInput" />
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Model</label>
+                                <input type="text" placeholder="Enter truck model" id="modelInput" />
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Registration Year</label>
+                                <input type="date" name="" id="registrationYearInput" />
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Starting Date</label>
+                                <input type="date" id="startingDateInput" />
+                            </div>
+                            <div class="add-modal__body--item">
+                                <label for="">Address</label>
+                                <input type="text" placeholder="Enter center address" id="addressInput"/>
+                            </div>
+							<div class="add-modal__body--item">
+                                <label for="">Status</label>
+                                <input type="text" placeholder="Enter center address" id="statusInput"/>
+                            </div>
+                            <div class="add-modal__control">
+                                <button class="add-modal__button add-modal__back" onclick="closeAddNewModal()">Close</button>
+                                <button class="add-modal__button add-modal__save" onclick="AddDataVehicle()">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!--  -->
+		<!-- Link Js leaflet -->
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
+		<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+		<!--  -->
+
+		<script src="js/dashBoard.js"></script>
+		
+		<!--hiển thị bảng trashbin -->
+		<script src="jsforBin/TrashBin.js"></script>
+		<script src="jsforBin/test.js"></script>
+		<!-- load map -->
+		<script src="js/MovingMarker.js"></script>
+		<script src="js/leaflet-scripts.js"></script> 
+	</body>
+</html>
